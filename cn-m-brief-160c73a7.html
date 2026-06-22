@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>金年会 · 站点介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f2f2f2;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Noto Sans SC", sans-serif;
+      color: #2c3e4e;
+      line-height: 1.7;
+      padding: 2rem 1.2rem;
+    }
+
+    .page-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* hero */
+    .hero {
+      background: #ffffff;
+      border-radius: 2rem;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
+      padding: 3.5rem 2.2rem;
+      margin-bottom: 2.4rem;
+      border: 1px solid #e6e9ed;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      color: #1f2b36;
+    }
+
+    .hero .tagline {
+      font-size: 1.1rem;
+      color: #617280;
+      max-width: 600px;
+      margin: 0.2rem auto 1.8rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: #404f5e;
+      max-width: 700px;
+      margin: 0 auto 1.4rem;
+    }
+
+    .hero .inline-link {
+      background: #f6f8fa;
+      padding: 0.6rem 1.4rem;
+      border-radius: 40px;
+      display: inline-block;
+      border: 1px solid #dce2e9;
+      font-size: 0.95rem;
+    }
+
+    .hero .inline-link a {
+      color: #1a5c8c;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px dotted #7b99b5;
+    }
+
+    .hero .inline-link a:hover {
+      color: #0a3b5e;
+      border-bottom-color: #0a3b5e;
+    }
+
+    /* 卡片通用 */
+    .card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin-bottom: 2.4rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 1.5rem;
+      padding: 2rem 2rem 2.2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+      border: 1px solid #e2e7ed;
+      transition: box-shadow 0.15s;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      font-weight: 550;
+      margin-bottom: 1rem;
+      color: #1e2b38;
+      border-left: 4px solid #8ab0d0;
+      padding-left: 0.9rem;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 1.2rem 0 0.5rem;
+      color: #2c4256;
+    }
+
+    .card p, .card li {
+      font-size: 0.98rem;
+      color: #3f505e;
+    }
+
+    .card ul {
+      padding-left: 1.3rem;
+      list-style: none;
+    }
+
+    .card ul li {
+      position: relative;
+      padding-left: 1.1rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .card ul li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: #7a98b7;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+
+    /* 特点列（两列） */
+    .feature-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin: 1.2rem 0 0.2rem;
+    }
+
+    .feature-item {
+      background: #f7f9fb;
+      border-radius: 1.2rem;
+      padding: 1.2rem 1.2rem 1.4rem;
+      border: 1px solid #e3e9f0;
+    }
+
+    .feature-item strong {
+      display: block;
+      font-weight: 600;
+      color: #1b3345;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e4e9f0;
+      padding: 1rem 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 500;
+      color: #1a2e3f;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-a {
+      color: #4f6375;
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      text-align: center;
+      padding: 2rem 0 1rem;
+      border-top: 1px solid #dce3ea;
+      margin-top: 1.2rem;
+    }
+
+    .footer-links a {
+      color: #3a6b8c;
+      text-decoration: none;
+      margin: 0 0.6rem;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+      color: #1b4a6a;
+    }
+
+    .footer-note {
+      color: #758696;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1.2rem 0.9rem;
+      }
+
+      .hero {
+        padding: 2.2rem 1.2rem;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .feature-row {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+      }
+
+      .card {
+        padding: 1.5rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+  <!-- hero -->
+  <div class="hero">
+    <h1>金年会 · 站点介绍</h1>
+    <div class="tagline">一个专注信息整合与内容呈现的线上空间</div>
+    <p>
+      这里是关于 <a href="https://cn-m-jinnianhui.com" style="color:#1a5c8c; font-weight:600; text-decoration:none; border-bottom:1px solid #7b99b5;">金年会</a> 的简要说明页。
+      我们尝试用更清晰的线索展示这个站点的定位、内容特点以及常见疑问，方便你快速了解它是否适合自己。
+    </p>
+    <div class="inline-link">
+      站点地址：<a href="https://cn-m-jinnianhui.com">金年会</a>
+    </div>
+  </div>
+
+  <!-- 优势区（卡片） -->
+  <div class="card-grid">
+    <div class="card">
+      <h2>为什么值得留意</h2>
+      <p>日常浏览中，我们常常需要一处信息相对集中、更新稳定的角落。<strong>金年会</strong> 保持相对简约的视觉与内容结构，没有过多浮夸设计，页面加载也比较轻快。你可以把它视为一个信息锚点，在需要时回来查看。</p>
+      <div class="feature-row">
+        <div class="feature-item">
+          <strong>内容节奏</strong>
+          <span style="font-size:0.93rem; color:#495f70;">图文结合，段落清晰，不堆砌。每一部分都有明确主题，方便扫读。</span>
+        </div>
+        <div class="feature-item">
+          <strong>浏览体验</strong>
+          <span style="font-size:0.93rem; color:#495f70;">浅灰背景+柔和阴影，减少视觉疲劳。卡片式分区让信息之间留出呼吸感。</span>
+        </div>
+        <div class="feature-item">
+          <strong>访问稳定</strong>
+          <span style="font-size:0.93rem; color:#495f70;">基于 GitHub Pages 部署，全球节点加速，日常访问速度表现良好。</span>
+        </div>
+        <div class="feature-item">
+          <strong>无额外干扰</strong>
+          <span style="font-size:0.93rem; color:#495f70;">页面无弹窗、无自动播放内容，你可以安静地阅读和跳转。</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 说明区 -->
+    <div class="card">
+      <h2>关于金年会的几点说明</h2>
+      <p>这个站点并非商业化平台，也不涉及任何交易或敏感信息。它的存在更接近于一个<strong>个人/小组维护的内容集合</strong>，日常更新以信息整理和主题介绍为主。</p>
+      <ul>
+        <li><strong>内容来源</strong> — 站点中的文字、图片均经过整理或授权，非恶意采集。</li>
+        <li><strong>更新频率</strong> — 保持适度更新，不追求日更，但每次发布均经过复核。</li>
+        <li><strong>外部链接</strong> — 页面中出现的链接均指向可靠来源，不包含隐藏跳转。</li>
+        <li><strong>隐私说明</strong> — 本站不主动收集个人数据，不设置第三方统计脚本。</li>
+      </ul>
+      <p style="margin-top:0.8rem;">你可以通过 <a href="https://cn-m-jinnianhui.com">金年会</a> 浏览完整内容，所有页面均遵循同一风格。</p>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="card">
+      <h2>常见疑问摘要</h2>
+      <div class="faq-item">
+        <div class="faq-q">问：这个网站主要分享什么类型的内容？</div>
+        <div class="faq-a">答：以信息归纳、主题介绍和实用性说明为主，不涉及娱乐或营销内容。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">问：需要注册或登录才能访问吗？</div>
+        <div class="faq-a">答：不需要。所有页面均公开可见，无需任何身份验证。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">问：移动端浏览体验如何？</div>
+        <div class="faq-a">答：页面采用响应式设计，手机、平板均可正常阅读，卡片自动适配宽度。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">问：我能否引用站内的内容？</div>
+        <div class="faq-a">答：非商业性引用或分享，请注明来自 <a href="https://cn-m-jinnianhui.com" style="color:#3a6b8c;">金年会</a>。若需大量使用，建议先联系确认。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="footer-links">
+    <a href="https://cn-m-jinnianhui.com">金年会</a>
+    <span style="color:#bcc9d6;">·</span>
+    <a href="https://cn-m-jinnianhui.com">金年会</a>
+    <span style="color:#bcc9d6;">·</span>
+    <a href="https://cn-m-jinnianhui.com">金年会</a>
+    <div class="footer-note">
+      本介绍页仅为方便了解而设，所有信息以 <a href="https://cn-m-jinnianhui.com" style="color:#4a6d87; text-decoration:none;">金年会</a> 实际页面为准。
+    </div>
+  </div>
+</div>
+</body>
+</html>
